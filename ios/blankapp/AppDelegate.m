@@ -15,6 +15,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+@import MobileCenter;
 
 @implementation AppDelegate
 
@@ -22,6 +23,8 @@
 {
   NSURL *jsCodeLocation;
 
+  [MSMobileCenter setLogLevel:MSLogLevelVerbose];
+  
   [RNPush register];  // Initialize Mobile Center push
 
   [RNCrashes registerWithCrashDelegate: [[RNCrashesDelegateAlwaysSend alloc] init]];  // Initialize Mobile Center crashes
